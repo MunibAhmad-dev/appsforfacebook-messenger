@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Apps for Facebook & Messenger (MessengerPro)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F5F2EC;
+      --surface: #FFFCF7;
+      --border: #E0D9CE;
+      --text: #1A1612;
+      --muted: #6B6358;
+      --accent: #2B5CE6;
+      --accent-light: #EAF0FD;
+      --tag-bg: #E8F4EC;
+      --tag-text: #1E6B38;
+      --warn-bg: #FDF3E7;
+      --warn-text: #7A4A12;
+      --serif: 'Instrument Serif', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(255,252,247,0.92);
+    }
+
+    .header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .brand-icon svg { width: 18px; height: 18px; fill: #fff; }
+
+    .brand-name {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .brand-sub {
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    .effective-badge {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 300;
+      white-space: nowrap;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: clamp(3rem, 7vw, 5rem) clamp(1.5rem, 5vw, 4rem) clamp(2rem, 5vw, 3.5rem);
+    }
+
+    .hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 1.2rem;
+      max-width: 680px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 580px;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 400;
+      padding: 0.35rem 0.75rem;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--muted);
+    }
+
+    .pill.green { background: var(--tag-bg); border-color: #B8E0C4; color: var(--tag-text); }
+    .pill svg { width: 13px; height: 13px; }
+
+    /* ── LAYOUT ── */
+    .layout {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem);
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* ── TOC SIDEBAR ── */
+    .toc {
+      position: sticky;
+      top: 76px;
+    }
+
+    .toc-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .toc-list {
+      list-style: none;
+    }
+
+    .toc-list li { margin-bottom: 0.1rem; }
+
+    .toc-list a {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      border-left: 2px solid transparent;
+      transition: all 0.15s ease;
+      line-height: 1.4;
+    }
+
+    .toc-list a:hover,
+    .toc-list a.active {
+      color: var(--accent);
+      background: var(--accent-light);
+      border-left-color: var(--accent);
+    }
+
+    /* ── CONTENT ── */
+    .content section {
+      margin-bottom: 3rem;
+      animation: fadeUp 0.4s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .content section:nth-child(1) { animation-delay: 0.05s; }
+    .content section:nth-child(2) { animation-delay: 0.10s; }
+    .content section:nth-child(3) { animation-delay: 0.15s; }
+    .content section:nth-child(4) { animation-delay: 0.20s; }
+    .content section:nth-child(5) { animation-delay: 0.25s; }
+    .content section:nth-child(6) { animation-delay: 0.30s; }
+    .content section:nth-child(7) { animation-delay: 0.35s; }
+    .content section:nth-child(8) { animation-delay: 0.40s; }
+    .content section:nth-child(9) { animation-delay: 0.45s; }
+
+    .section-num {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    h3 {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+      margin: 1.4rem 0 0.5rem;
+      letter-spacing: 0.01em;
+    }
+
+    p { margin-bottom: 0.9rem; color: var(--text); font-size: 0.95rem; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      margin: 0.5rem 0 0.9rem;
+      padding: 0;
+    }
+
+    ul li {
+      font-size: 0.92rem;
+      color: var(--text);
+      padding: 0.25rem 0 0.25rem 1.4rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0.4rem;
+      top: 0.65rem;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.55;
+    }
+
+    /* ── CALLOUT CARDS ── */
+    .callout {
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .callout-green {
+      background: var(--tag-bg);
+      border: 1px solid #B8E0C4;
+    }
+
+    .callout-green strong { color: var(--tag-text); }
+
+    .callout-blue {
+      background: var(--accent-light);
+      border: 1px solid #C0D4F7;
+    }
+
+    .callout-blue strong { color: var(--accent); }
+
+    .callout-warm {
+      background: var(--warn-bg);
+      border: 1px solid #F0D4A8;
+    }
+
+    .callout-warm strong { color: var(--warn-text); }
+
+    .callout p { margin: 0; font-size: 0.88rem; }
+
+    /* ── DATA TABLE ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.875rem;
+    }
+
+    .data-table th {
+      text-align: left;
+      font-weight: 500;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0.6rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .data-table td {
+      padding: 0.65rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      color: var(--text);
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: var(--bg); }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      line-height: 1.4;
+    }
+
+    .tag-green { background: var(--tag-bg); color: var(--tag-text); }
+    .tag-blue  { background: var(--accent-light); color: var(--accent); }
+    .tag-gray  { background: var(--border); color: var(--muted); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 0 3rem;
+    }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--accent-light);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 1.7; }
+
+    .contact-info h3 { margin: 0 0 0.25rem; font-size: 0.9rem; }
+    .contact-info p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-info a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem clamp(1.5rem, 5vw, 4rem);
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0.2rem 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      .toc {
+        position: static;
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="brand" href="#">
+      <span class="brand-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.929 1.453 5.55 3.727 7.27V22l3.42-1.879c.912.252 1.876.388 2.853.388 5.523 0 10-4.144 10-9.266C22 6.145 17.523 2 12 2zm1.04 12.483l-2.546-2.715-4.97 2.715 5.472-5.81 2.606 2.715 4.91-2.715-5.472 5.81z"/></svg>
+      </span>
+      <span>
+        <div class="brand-name">Apps for facebook and Messenger</div>
+        <div class="brand-sub">Apps for Facebook & Messenger</div>
+      </span>
+    </a>
+    <span class="effective-badge">Effective: May 21, 2025</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Legal · Privacy</div>
+    <h1>Privacy Policy for<br /><em>Apps for Facebook &amp; Messenger</em></h1>
+    <p class="hero-desc">We believe privacy is a right, not a feature. This policy explains exactly what data we handle, why, and how — in plain language.</p>
+    <div class="hero-meta">
+      <span class="pill green">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+        No analytics or tracking
+      </span>
+      <span class="pill green">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+        No data sold to third parties
+      </span>
+      <span class="pill green">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+        All data stays on your device
+      </span>
+      <span class="pill">v2.0.2 · macOS</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="layout">
+
+  <!-- TOC -->
+  <nav class="toc" aria-label="Table of Contents">
+    <div class="toc-label">Contents</div>
+    <ul class="toc-list">
+      <li><a href="#introduction">1. Introduction</a></li>
+      <li><a href="#information-we-collect">2. Information We Collect</a></li>
+      <li><a href="#how-we-use">3. How We Use Your Data</a></li>
+      <li><a href="#data-storage">4. Data Storage & Security</a></li>
+      <li><a href="#data-sharing">5. Data Sharing</a></li>
+      <li><a href="#third-party">6. Third-Party Services</a></li>
+      <li><a href="#your-rights">7. Your Privacy Rights</a></li>
+      <li><a href="#retention">8. Data Retention</a></li>
+      <li><a href="#children">9. Children's Privacy</a></li>
+      <li><a href="#changes">10. Policy Changes</a></li>
+      <li><a href="#contact">11. Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <!-- 1. INTRODUCTION -->
+    <section id="introduction">
+      <div class="section-num">Section 01</div>
+      <h2>Introduction</h2>
+      <p>Apps for Facebook &amp; Messenger ("MessengerPro", "we", "our", or "us") is a macOS desktop application that provides a native wrapper for Facebook Messenger, allowing users to manage multiple Messenger accounts with an enhanced desktop experience.</p>
+      <p>This Privacy Policy describes how we handle information in connection with your use of MessengerPro (version 2.0.2). By using our application, you agree to the practices described in this policy.</p>
+      <div class="callout callout-green">
+        <p><strong>Our core privacy promise:</strong> We do not collect, store, or transmit your personal data to any external server. All information is stored locally on your device or in your own personal iCloud account. We have no backend server and no ability to access your data.</p>
+      </div>
+    </section>
+
+    <!-- 2. INFORMATION WE COLLECT -->
+    <section id="information-we-collect">
+      <div class="section-num">Section 02</div>
+      <h2>Information We Collect</h2>
+      <p>We collect only the minimum information necessary to provide app functionality. Here is a complete breakdown:</p>
+
+      <h3>Sign in with Apple</h3>
+      <p>When you choose to authenticate using Sign in with Apple, Apple provides us with:</p>
+      <ul>
+        <li>Your Apple ID (anonymized or real, per your Apple settings)</li>
+        <li>Your email address (real or Apple-relayed private address — your choice)</li>
+        <li>Your display name (only if you choose to share it)</li>
+      </ul>
+      <p>This information is used solely to link your premium subscription entitlement to your account and stored locally on your device. It is never transmitted to our servers.</p>
+
+      <h3>Subscription &amp; Purchase Data</h3>
+      <p>When you purchase a premium subscription or lifetime licence, Apple's in-app purchase system processes the transaction. We store the following locally:</p>
+      <ul>
+        <li>Subscription status (active, expired, trial)</li>
+        <li>Subscription expiry date</li>
+        <li>Product identifier (e.g. monthly, annual, lifetime)</li>
+        <li>Purchase receipt (for local entitlement verification)</li>
+      </ul>
+      <p>Payment details (card numbers, billing information) are handled entirely by Apple and are never accessible to us.</p>
+
+      <h3>Messenger Session Data</h3>
+      <p>To support multi-account management, MessengerPro stores the following <strong>locally on your device</strong>:</p>
+      <ul>
+        <li>Facebook/Messenger session cookies and tokens per account</li>
+        <li>Cached message content (managed by the Chromium BrowserView)</li>
+        <li>Account identifiers and display names you add to the app</li>
+        <li>Workspace and folder metadata you create</li>
+      </ul>
+      <div class="callout callout-blue">
+        <p><strong>Important:</strong> MessengerPro is a display wrapper. Your messages, contacts, and Facebook data are processed entirely by Facebook's servers under Facebook's own privacy policy. We never read, copy, or transmit your message content.</p>
+      </div>
+
+      <h3>iCloud-Synced Preferences</h3>
+      <p>With your permission, the following lightweight preferences are synced via iCloud Key-Value Store so your settings are consistent across your own devices:</p>
+      <ul>
+        <li>Theme selection (light / dark / system)</li>
+        <li>Sidebar expansion state</li>
+        <li>Focus mode on/off state</li>
+        <li>Workspace metadata (names and order)</li>
+      </ul>
+
+      <h3>Notifications</h3>
+      <p>MessengerPro displays native macOS notifications for new Messenger messages. These notifications are generated locally by macOS and do not involve any data being sent to external servers.</p>
+
+      <h3>What We Do NOT Collect</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Collected?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Usage analytics or telemetry</td><td><span class="tag tag-green">Never collected</span></td></tr>
+          <tr><td>Crash reports</td><td><span class="tag tag-green">Never collected</span></td></tr>
+          <tr><td>IP address or location</td><td><span class="tag tag-green">Never collected</span></td></tr>
+          <tr><td>Device identifiers</td><td><span class="tag tag-green">Never collected</span></td></tr>
+          <tr><td>Browsing or behavior data</td><td><span class="tag tag-green">Never collected</span></td></tr>
+          <tr><td>Message content</td><td><span class="tag tag-green">Never collected</span></td></tr>
+          <tr><td>Advertising identifiers</td><td><span class="tag tag-green">Never collected</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 3. HOW WE USE -->
+    <section id="how-we-use">
+      <div class="section-num">Section 03</div>
+      <h2>How We Use Your Information</h2>
+      <p>We use the limited information we handle for the following purposes only:</p>
+
+      <h3>App Functionality</h3>
+      <ul>
+        <li>Authenticating your identity via Sign in with Apple to link your premium entitlement</li>
+        <li>Storing multiple Messenger account sessions so you can switch between accounts seamlessly</li>
+        <li>Verifying your subscription status to unlock premium features</li>
+        <li>Displaying macOS notifications for incoming messages</li>
+      </ul>
+
+      <h3>Preference Synchronisation</h3>
+      <ul>
+        <li>Syncing your theme and UI preferences across your personal Apple devices via iCloud</li>
+      </ul>
+
+      <h3>What We Do NOT Use Your Data For</h3>
+      <ul>
+        <li>Advertising or marketing of any kind</li>
+        <li>Profiling or behavioural analysis</li>
+        <li>Sale or transfer to third parties</li>
+        <li>Training AI or machine-learning models</li>
+        <li>Any purpose beyond operating the app</li>
+      </ul>
+    </section>
+
+    <!-- 4. DATA STORAGE & SECURITY -->
+    <section id="data-storage">
+      <div class="section-num">Section 04</div>
+      <h2>Data Storage &amp; Security</h2>
+
+      <h3>Local Encrypted Storage</h3>
+      <p>All sensitive data (account credentials, subscription status, settings) is stored in an encrypted JSON file protected by <strong>macOS Keychain</strong> via Electron's <code>safeStorage</code> API. This means:</p>
+      <ul>
+        <li>Data is encrypted at rest using AES-256 (managed by macOS)</li>
+        <li>Only MessengerPro can decrypt and access its own data</li>
+        <li>Data cannot be read by other applications on your system</li>
+      </ul>
+
+      <h3>Sandboxed Rendering</h3>
+      <p>Messenger content is displayed inside a sandboxed Chromium BrowserView with <strong>context isolation enabled</strong>. This means:</p>
+      <ul>
+        <li>The rendering engine has no access to Electron's Node.js APIs</li>
+        <li>Session data for each account is fully isolated — cookies from one account cannot leak into another</li>
+        <li>The app cannot inject scripts into or read data from the Messenger web content</li>
+      </ul>
+
+      <h3>iCloud Security</h3>
+      <p>Preferences synced via iCloud are protected by Apple's iCloud encryption and are accessible only from devices signed into your Apple ID. We use a last-write-wins conflict resolution strategy for preference sync and do not store any iCloud data on our own infrastructure.</p>
+
+      <div class="callout callout-warm">
+        <p><strong>No server, no breach risk:</strong> Because we operate no backend server and store no data centrally, there is no server-side database that could be compromised in a data breach affecting your information.</p>
+      </div>
+    </section>
+
+    <!-- 5. DATA SHARING -->
+    <section id="data-sharing">
+      <div class="section-num">Section 05</div>
+      <h2>Data Sharing</h2>
+      <p>We do not sell, rent, lease, or share your personal data with any third party, advertiser, data broker, or commercial partner — ever.</p>
+      <p>The only scenarios in which data moves outside your device are:</p>
+      <ul>
+        <li><strong>iCloud sync:</strong> Your own preferences are synced to your own Apple iCloud account. Apple processes this under their Privacy Policy.</li>
+        <li><strong>Sign in with Apple:</strong> Apple authenticates your identity and provides us a token. Apple processes this under their Privacy Policy.</li>
+        <li><strong>In-App Purchases:</strong> Apple processes all payment transactions. We receive only entitlement confirmation.</li>
+        <li><strong>Facebook/Messenger:</strong> When you use Messenger through our app, your interactions travel to Facebook's servers under Facebook's Privacy Policy, exactly as they would in a browser.</li>
+      </ul>
+      <p>We have no control over, and are not responsible for, the privacy practices of Apple or Facebook.</p>
+    </section>
+
+    <!-- 6. THIRD-PARTY SERVICES -->
+    <section id="third-party">
+      <div class="section-num">Section 06</div>
+      <h2>Third-Party Services</h2>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Purpose</th>
+            <th>Data Involved</th>
+            <th>Their Policy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Apple Sign In</strong></td>
+            <td>Authentication</td>
+            <td>Apple ID, email, name</td>
+            <td><span class="tag tag-blue">apple.com/legal/privacy</span></td>
+          </tr>
+          <tr>
+            <td><strong>Apple IAP</strong></td>
+            <td>Subscriptions & payments</td>
+            <td>Purchase receipts</td>
+            <td><span class="tag tag-blue">apple.com/legal/privacy</span></td>
+          </tr>
+          <tr>
+            <td><strong>iCloud KV Store</strong></td>
+            <td>Preference sync</td>
+            <td>Theme, UI settings</td>
+            <td><span class="tag tag-blue">apple.com/legal/privacy</span></td>
+          </tr>
+          <tr>
+            <td><strong>Facebook / Meta</strong></td>
+            <td>Messenger content display</td>
+            <td>Your Messenger usage (per Meta's policy)</td>
+            <td><span class="tag tag-gray">facebook.com/privacy</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 7. YOUR RIGHTS -->
+    <section id="your-rights">
+      <div class="section-num">Section 07</div>
+      <h2>Your Privacy Rights</h2>
+      <p>Depending on your location, you may have the following rights regarding your personal data. Because all data is stored locally on your device, most of these rights are exercised directly by you:</p>
+
+      <h3>Right to Access</h3>
+      <p>You can view all data MessengerPro holds by examining the app's local storage directory in <code>~/Library/Application Support/MessengerPro/</code>.</p>
+
+      <h3>Right to Deletion</h3>
+      <p>You can delete all app data at any time by:</p>
+      <ul>
+        <li>Uninstalling MessengerPro from your Mac</li>
+        <li>Deleting the app support folder at <code>~/Library/Application Support/MessengerPro/</code></li>
+        <li>Removing iCloud-synced preferences in <strong>System Settings → Apple ID → iCloud → Manage Storage</strong></li>
+      </ul>
+
+      <h3>Right to Portability</h3>
+      <p>Your data is stored in standard JSON format and is accessible directly on your file system. You may copy or export it at any time.</p>
+
+      <h3>Right to Correction</h3>
+      <p>You can update your preferences and account details at any time within the app settings.</p>
+
+      <h3>GDPR (EU/EEA Users)</h3>
+      <p>If you are located in the European Economic Area, you have additional rights under the General Data Protection Regulation (GDPR), including rights of restriction and objection. Because MessengerPro stores data only locally on your device, we act as a data processor in a very limited capacity. For any GDPR-related requests, please contact us at the address below.</p>
+
+      <h3>CCPA (California Users)</h3>
+      <p>California residents have rights under the California Consumer Privacy Act (CCPA). We do not sell personal information. If you have CCPA-related requests, please contact us.</p>
+    </section>
+
+    <!-- 8. RETENTION -->
+    <section id="retention">
+      <div class="section-num">Section 08</div>
+      <h2>Data Retention &amp; Deletion</h2>
+      <p>Since all data is stored locally, <strong>you control retention entirely</strong>:</p>
+      <ul>
+        <li><strong>Session data</strong> is retained until you remove an account from the app or uninstall it</li>
+        <li><strong>Subscription data</strong> is retained while the app is installed to allow entitlement verification</li>
+        <li><strong>iCloud preferences</strong> are retained until you delete them from iCloud Storage settings</li>
+        <li><strong>Sign in with Apple data</strong> is retained while the app is installed; you can also revoke app access from <strong>Apple ID Settings → Password & Security → Apps Using Your Apple ID</strong></li>
+      </ul>
+      <p>Upon uninstallation and deletion of the app support folder, all locally stored data is permanently removed from your device. We have no copies of your data and cannot recover it after deletion.</p>
+    </section>
+
+    <!-- 9. CHILDREN -->
+    <section id="children">
+      <div class="section-num">Section 09</div>
+      <h2>Children's Privacy</h2>
+      <p>MessengerPro is not directed at children under the age of 13 (or 16 in the EU under GDPR). We do not knowingly collect personal information from children. If you believe a child has used this application and you have concerns, please contact us and we will assist you in removing the relevant data.</p>
+    </section>
+
+    <!-- 10. CHANGES -->
+    <section id="changes">
+      <div class="section-num">Section 10</div>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in the application or applicable laws. When we make significant changes, we will:</p>
+      <ul>
+        <li>Update the "Last Updated" date at the top of this page</li>
+        <li>Display an in-app notice on first launch after a policy update</li>
+      </ul>
+      <p>We encourage you to review this policy periodically. Continued use of MessengerPro after any changes constitutes your acceptance of the updated policy.</p>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- 11. CONTACT -->
+    <section id="contact">
+      <div class="section-num">Section 11</div>
+      <h2>Contact Us</h2>
+      <p>If you have questions, concerns, or requests regarding this Privacy Policy or the handling of your personal data, please reach out:</p>
+
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="contact-info">
+          <h3>Privacy Support</h3>
+          <p>Email us at <a href="mailto:privacy@your-domain.com">privacy@your-domain.com</a><br />
+          We aim to respond to all privacy enquiries within <strong>5 business days</strong>.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:1rem;" class="callout callout-blue">
+        <p><strong>This policy is hosted at:</strong> <a href="#" style="color:var(--accent);text-decoration:none;font-weight:500;">https://your-domain.com/privacy</a> — update this URL before submitting to App Store Connect.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p>Apps for Facebook &amp; Messenger (MessengerPro) · Version 2.0.2 · macOS</p>
+    <p>Effective Date: May 21, 2025 &nbsp;·&nbsp; Last Updated: May 21, 2025</p>
+    <p style="margin-top:0.5rem;">This app is not affiliated with or endorsed by Meta Platforms, Inc. or Apple Inc.</p>
+  </div>
+</footer>
+
+<!-- TOC ACTIVE HIGHLIGHT SCRIPT -->
+<script>
+  (function () {
+    const links = document.querySelectorAll('.toc-list a');
+    const sections = document.querySelectorAll('.content section[id]');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.toc-list a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  })();
+</script>
+
+</body>
+</html>
